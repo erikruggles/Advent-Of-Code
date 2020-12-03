@@ -1,0 +1,9 @@
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+
+
+[Bb]in/
+[Oo]bj/
+[Ll]og/
