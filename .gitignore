@@ -1,5 +1,6 @@
 # JetBrains Rider
 .idea/
+.vs/
 *.sln.iml
 
 
