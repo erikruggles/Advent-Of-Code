@@ -37,7 +37,7 @@ namespace AdventOfCode2020.Day_3
             return path;
         }
 
-        public static (int newY, int newX, BiomeSquare newLocation) MakeMove(BiomeSquare[,] biome, int currentY, int currentX, int moveY, int moveX)
+        public static (int newY, int newX, BiomeSquare? newLocation) MakeMove(BiomeSquare[,] biome, int currentY, int currentX, int moveY, int moveX)
         {
             var newY = currentY + moveY;
             var newX = currentX + moveX;

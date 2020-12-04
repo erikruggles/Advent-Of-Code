@@ -4,10 +4,18 @@ namespace AdventOfCode2020.Day_2
 {
     public record PasswordAndPolicy
     {
-        public int FirstNumber { get; set; }
-        public int SecondNumber { get; set; }
-        public char RequiredCharacter { get; set; }
-        public string Password { get; set; }
+        public int FirstNumber { get; }
+        public int SecondNumber { get; }
+        public char RequiredCharacter { get; }
+        public string Password { get; }
+
+        public PasswordAndPolicy(int firstNumber, int secondNumber, char requiredChar, string password)
+        {
+            FirstNumber = firstNumber;
+            SecondNumber = secondNumber;
+            RequiredCharacter = requiredChar;
+            Password = password;
+        }
 
         public bool IsValidPerOldJobPolicy()
         {
@@ -31,13 +39,7 @@ namespace AdventOfCode2020.Day_2
             var requiredString = parts[1].Trim(':');
             var password = parts[2];
 
-            return new PasswordAndPolicy
-            {
-                FirstNumber = int.Parse(minAndMax[0]),
-                SecondNumber = int.Parse(minAndMax[1]),
-                RequiredCharacter = requiredString[0],
-                Password = password
-            };
+            return new PasswordAndPolicy(int.Parse(minAndMax[0]), int.Parse(minAndMax[1]), requiredString[0], password);
         }
     }
 }
