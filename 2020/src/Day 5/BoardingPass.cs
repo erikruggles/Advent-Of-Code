@@ -17,13 +17,13 @@ namespace AdventOfCode2020.Day_5
 
         public int DetermineRowNumber()
         {
-            var seats = Enumerable.Range(0, 127).ToArray();
+            var seats = Enumerable.Range(0, 128).ToArray();
             return BinarySearch(RowIndicator, "f", seats);
         }
 
         public int DetermineSeatNumber()
         {
-            var seats = Enumerable.Range(0, 7).ToArray();
+            var seats = Enumerable.Range(0, 8).ToArray();
             return BinarySearch(SeatIndicator, "l", seats);
         }
 

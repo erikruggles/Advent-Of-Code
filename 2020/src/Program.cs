@@ -41,7 +41,7 @@ namespace AdventOfCode2020
 
             Console.WriteLine("Day 5");
             Console.WriteLine($"Part 1: {Day5Input.ParseBoardingPasses().Select(x => x.DetermineSeatId()).Max()}");
-            //Console.WriteLine($"Part 2: {passports.Count(x => x.StrictIsValid())}");
+            Console.WriteLine($"Part 2: {Day5.FindMySeatId()}");
 
             Console.ReadKey();
         }

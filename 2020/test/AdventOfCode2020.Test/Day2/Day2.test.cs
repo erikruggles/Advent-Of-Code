@@ -23,7 +23,7 @@ namespace AdventOfCode2020.Test.Day2
             Assert.Equal(expectedFirstNumber, parsedPasswordAndPolicy.FirstNumber);
             Assert.Equal(expectedSecondNumber, parsedPasswordAndPolicy.SecondNumber);
             Assert.Equal(expectedRequiredCharacter, parsedPasswordAndPolicy.RequiredCharacter);
-            Assert.Equal(expectedPassword, parsedPasswordAndPolicy.Password);
+            Assert.Equal<string>(expectedPassword, parsedPasswordAndPolicy.Password);
         }
 
         [InlineData("15-16 m: mhmjmzrmmlmmmmmm", false)]
