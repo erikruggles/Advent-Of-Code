@@ -5,6 +5,7 @@ using AdventOfCode2020.Day_1;
 using AdventOfCode2020.Day_2;
 using AdventOfCode2020.Day_3;
 using AdventOfCode2020.Day_4;
+using AdventOfCode2020.Day_5;
 
 namespace AdventOfCode2020
 {
@@ -35,6 +36,12 @@ namespace AdventOfCode2020
             var passports = Day4Input.ParseAllPassports();
             Console.WriteLine($"Part 1: {passports.Count(x => x.NaiveIsValid())}");
             Console.WriteLine($"Part 2: {passports.Count(x => x.StrictIsValid())}");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Day 5");
+            Console.WriteLine($"Part 1: {Day5Input.ParseBoardingPasses().Select(x => x.DetermineSeatId()).Max()}");
+            //Console.WriteLine($"Part 2: {passports.Count(x => x.StrictIsValid())}");
 
             Console.ReadKey();
         }

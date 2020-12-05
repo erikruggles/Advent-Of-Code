@@ -8,7 +8,7 @@ This is the folder to keep track of all of the code I have written to help solve
 | 2 | 636 | 588 |
 | 3 | 384 | 3510149120 |
 | 4 | 256 | 198 |
-| 5 | | |
+| 5 | 922 | |
 | 6 | | |
 | 7 | | |
 | 8 | | |
