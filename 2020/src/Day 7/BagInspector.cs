@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 
 namespace AdventOfCode2020.Day_7
 {
@@ -26,6 +27,29 @@ namespace AdventOfCode2020.Day_7
             }
 
             return colorsSoFar;
+        }
+
+
+        public static int DetermineHowManyBagsAreInOneBagOfColor(string color)
+        {
+            var bags = Day7Input.CreateBagsFromInput();
+
+            return DetermineHowManyBagsAreInOneBagOfColor(bags, color);
+        }
+
+        private static int DetermineHowManyBagsAreInOneBagOfColor(ImmutableList<Bag> bags, string color)
+        {
+            var bag = bags.First(b => b.Color == color);
+
+            var count = 0;
+
+            foreach (var (subBagColor, subBagCount) in bag.PossibleContents)
+            {
+                count += subBagCount;
+                count += subBagCount * DetermineHowManyBagsAreInOneBagOfColor(bags, subBagColor);
+            }
+
+            return count;
         }
     }
 }

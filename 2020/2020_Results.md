@@ -10,7 +10,7 @@ This is the folder to keep track of all of the code I have written to help solve
 | 4 | 256 | 198 |
 | 5 | 922 | 747 |
 | 6 | 6542 | 3299 |
-| 7 | 179 | |
+| 7 | 179 | 18925 |
 | 8 | | |
 | 9 | | |
 | 10 | | |

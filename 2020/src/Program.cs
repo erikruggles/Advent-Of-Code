@@ -17,7 +17,8 @@ namespace AdventOfCode2020
         {
             Console.WriteLine("Day 1");
             Console.WriteLine($"Part 1: {Day1.FindProductOfPairThatAddsTo(Day1InputFactory.GetInput(), 2020)}");
-            Console.WriteLine($"Part 2: {Day1.FindProductOfSetThatAddsTo(Day1InputFactory.GetInput(), 3, 2020)}");
+            //Leaving this comment out as I solved this for a general solution which is very slow and memory intensive.
+            //Console.WriteLine($"Part 2: {Day1.FindProductOfSetThatAddsTo(Day1InputFactory.GetInput(), 3, 2020)}");
 
             Console.WriteLine();
 
@@ -53,9 +54,9 @@ namespace AdventOfCode2020
 
             Console.WriteLine();
 
-            Console.WriteLine("Day 6");
+            Console.WriteLine("Day 7");
             Console.WriteLine($"Part 1: {BagInspector.DetermineBagsThatCanContainBagOfColor("shiny gold").Count}");
-            //Console.WriteLine($"Part 2: {Day6Input.ParsePassengerGroups().Sum(x => x.DetermineAffirmativeQuestionsThatEveryoneAnswered().Count())}");
+            Console.WriteLine($"Part 2: {BagInspector.DetermineHowManyBagsAreInOneBagOfColor("shiny gold")}");
 
             Console.ReadKey();
         }
