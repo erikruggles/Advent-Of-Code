@@ -7,6 +7,7 @@ using AdventOfCode2020.Day_3;
 using AdventOfCode2020.Day_4;
 using AdventOfCode2020.Day_5;
 using AdventOfCode2020.Day_6;
+using AdventOfCode2020.Day_7;
 
 namespace AdventOfCode2020
 {
@@ -49,6 +50,12 @@ namespace AdventOfCode2020
             Console.WriteLine("Day 6");
             Console.WriteLine($"Part 1: {Day6Input.ParsePassengerGroups().Sum(x => x.DetermineAffirmativeQuestionsThatAnyoneAnswered().Count())}");
             Console.WriteLine($"Part 2: {Day6Input.ParsePassengerGroups().Sum(x => x.DetermineAffirmativeQuestionsThatEveryoneAnswered().Count())}");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Day 6");
+            Console.WriteLine($"Part 1: {BagInspector.DetermineBagsThatCanContainBagOfColor("shiny gold").Count}");
+            //Console.WriteLine($"Part 2: {Day6Input.ParsePassengerGroups().Sum(x => x.DetermineAffirmativeQuestionsThatEveryoneAnswered().Count())}");
 
             Console.ReadKey();
         }
