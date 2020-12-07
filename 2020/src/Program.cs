@@ -6,6 +6,7 @@ using AdventOfCode2020.Day_2;
 using AdventOfCode2020.Day_3;
 using AdventOfCode2020.Day_4;
 using AdventOfCode2020.Day_5;
+using AdventOfCode2020.Day_6;
 
 namespace AdventOfCode2020
 {
@@ -42,6 +43,12 @@ namespace AdventOfCode2020
             Console.WriteLine("Day 5");
             Console.WriteLine($"Part 1: {Day5Input.ParseBoardingPasses().Select(x => x.DetermineSeatId()).Max()}");
             Console.WriteLine($"Part 2: {Day5.FindMySeatId()}");
+            
+            Console.WriteLine();
+
+            Console.WriteLine("Day 6");
+            Console.WriteLine($"Part 1: {Day6Input.ParsePassengerGroups().Sum(x => x.DetermineAffirmativeQuestionsThatAnyoneAnswered().Count())}");
+            Console.WriteLine($"Part 2: {Day6Input.ParsePassengerGroups().Sum(x => x.DetermineAffirmativeQuestionsThatEveryoneAnswered().Count())}");
 
             Console.ReadKey();
         }

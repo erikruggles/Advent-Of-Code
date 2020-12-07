@@ -9,7 +9,7 @@ This is the folder to keep track of all of the code I have written to help solve
 | 3 | 384 | 3510149120 |
 | 4 | 256 | 198 |
 | 5 | 922 | 747 |
-| 6 | | |
+| 6 | 6542 | 3299 |
 | 7 | | |
 | 8 | | |
 | 9 | | |
