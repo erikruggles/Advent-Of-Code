@@ -19,7 +19,7 @@ namespace AdventOfCode2020.Test.Day7
             Assert.Equal(expectedChildAmount, bag.PossibleContents[expectedChildColor]);
         }
 
-        [Fact(DisplayName = "Day 5 - Bag Factory - Create Bag From String with No Child Bags")]
+        [Fact(DisplayName = "Day 7 - Bag Factory - Create Bag From String with No Child Bags")]
         public void Day7_BagFactory_CreateBagFromString_NoChildBags()
         {
             var bag = BagFactory.CreateBagFromString(@"dark silver bags contain no other bags.");

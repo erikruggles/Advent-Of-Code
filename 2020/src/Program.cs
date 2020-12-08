@@ -8,6 +8,7 @@ using AdventOfCode2020.Day_4;
 using AdventOfCode2020.Day_5;
 using AdventOfCode2020.Day_6;
 using AdventOfCode2020.Day_7;
+using AdventOfCode2020.Day_8;
 
 namespace AdventOfCode2020
 {
@@ -57,6 +58,12 @@ namespace AdventOfCode2020
             Console.WriteLine("Day 7");
             Console.WriteLine($"Part 1: {BagInspector.DetermineBagsThatCanContainBagOfColor("shiny gold").Count}");
             Console.WriteLine($"Part 2: {BagInspector.DetermineHowManyBagsAreInOneBagOfColor("shiny gold")}");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Day 8");
+            Console.WriteLine($"Part 1: {Day8.FindAccumulatorValueAtEndOfLoop()}");
+            //Console.WriteLine($"Part 2: {BagInspector.DetermineHowManyBagsAreInOneBagOfColor("shiny gold")}");
 
             Console.ReadKey();
         }
