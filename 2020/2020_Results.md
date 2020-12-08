@@ -11,7 +11,7 @@ This is the folder to keep track of all of the code I have written to help solve
 | 5 | 922 | 747 |
 | 6 | 6542 | 3299 |
 | 7 | 179 | 18925 |
-| 8 | 1451 | |
+| 8 | 1451 | 1160 |
 | 9 | | |
 | 10 | | |
 | 11 | | |

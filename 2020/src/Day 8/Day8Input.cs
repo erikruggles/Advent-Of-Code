@@ -634,10 +634,14 @@ acc +6
 acc +3
 jmp +1";
 
+        public static IEnumerable<ComputerInstruction> ParseInstructionsFromInput()
+        {
+            return Input.Split("\r\n").Select(ComputerInstructionFactory.CreateComputerInstructionFromString);
+        }
+
         public static Computer CreateComputerFromInput()
         {
-            return new Computer(Input.Split("\r\n")
-                .Select(ComputerInstructionFactory.CreateComputerInstructionFromString));
+            return new Computer(ParseInstructionsFromInput());
         }
     }
 }

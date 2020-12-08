@@ -20,6 +20,11 @@ namespace AdventOfCode2020.Day_8
 
         public (int nextInstructionIndex, int accumulatorValue) PerformNextInstruction()
         {
+            if (_currentInstructionIndex >= _computerInstructions.Length)
+            {
+                return (-1, _accumulator);
+            }
+
             var instruction = _computerInstructions[_currentInstructionIndex];
             switch (instruction.Operation)
             {

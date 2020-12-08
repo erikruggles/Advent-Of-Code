@@ -62,8 +62,9 @@ namespace AdventOfCode2020
             Console.WriteLine();
 
             Console.WriteLine("Day 8");
-            Console.WriteLine($"Part 1: {Day8.FindAccumulatorValueAtEndOfLoop()}");
-            //Console.WriteLine($"Part 2: {BagInspector.DetermineHowManyBagsAreInOneBagOfColor("shiny gold")}");
+            var (_, accumulator) = Day8.RunUntilEndOrLoop(Day8Input.CreateComputerFromInput());
+            Console.WriteLine($"Part 1: {accumulator}");
+            Console.WriteLine($"Part 2: {Day8.FindCorruptedInstruction()}");
 
             Console.ReadKey();
         }
