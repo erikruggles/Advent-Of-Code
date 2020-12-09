@@ -12,7 +12,7 @@ This is the folder to keep track of all of the code I have written to help solve
 | 6 | 6542 | 3299 |
 | 7 | 179 | 18925 |
 | 8 | 1451 | 1160 |
-| 9 | | |
+| 9 | 23278925 | 4011064 |
 | 10 | | |
 | 11 | | |
 | 12 | | |

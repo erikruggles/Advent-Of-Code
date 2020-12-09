@@ -9,6 +9,7 @@ using AdventOfCode2020.Day_5;
 using AdventOfCode2020.Day_6;
 using AdventOfCode2020.Day_7;
 using AdventOfCode2020.Day_8;
+using AdventOfCode2020.Day_9;
 
 namespace AdventOfCode2020
 {
@@ -65,6 +66,14 @@ namespace AdventOfCode2020
             var (_, accumulator) = Day8.RunUntilEndOrLoop(Day8Input.CreateComputerFromInput());
             Console.WriteLine($"Part 1: {accumulator}");
             Console.WriteLine($"Part 2: {Day8.FindCorruptedInstruction()}");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Day 9");
+            var day9Input = Day9Input.ParseCodeFromInput();
+            var weakness = CodeBreaker.FindCodeWeakness(day9Input);
+            Console.WriteLine($"Part 1: {weakness}");
+            Console.WriteLine($"Part 2: {CodeBreaker.FindEncryptionWeakness(day9Input, weakness)}");
 
             Console.ReadKey();
         }
