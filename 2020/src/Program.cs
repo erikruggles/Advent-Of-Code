@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AdventOfCode2020.Day_1;
-using AdventOfCode2020.Day_2;
-using AdventOfCode2020.Day_3;
-using AdventOfCode2020.Day_4;
-using AdventOfCode2020.Day_5;
-using AdventOfCode2020.Day_6;
-using AdventOfCode2020.Day_7;
-using AdventOfCode2020.Day_8;
-using AdventOfCode2020.Day_9;
+using AdventOfCode2020.Day_01;
+using AdventOfCode2020.Day_02;
+using AdventOfCode2020.Day_03;
+using AdventOfCode2020.Day_04;
+using AdventOfCode2020.Day_05;
+using AdventOfCode2020.Day_06;
+using AdventOfCode2020.Day_07;
+using AdventOfCode2020.Day_08;
+using AdventOfCode2020.Day_09;
 
 namespace AdventOfCode2020
 {
