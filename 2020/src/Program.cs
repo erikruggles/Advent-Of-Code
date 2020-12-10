@@ -81,7 +81,7 @@ namespace AdventOfCode2020
             Console.WriteLine("Day 10");
             var differences = Day10.BuildJoltageChain();
             Console.WriteLine($"Part 1: {differences[1] * differences[3]}");
-            //Console.WriteLine($"Part 2: {CodeBreaker.FindEncryptionWeakness(day9Input, weakness)}");
+            Console.WriteLine($"Part 2: {Day10.DetermineNumberOfPermutations()}");
 
             Console.ReadKey();
         }

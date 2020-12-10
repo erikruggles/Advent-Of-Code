@@ -20,5 +20,29 @@ namespace AdventOfCode2020.Day_10
             }
             return joltageDifferences;
         }
+
+        public static long DetermineNumberOfPermutations()
+        {
+            var adapters = Day10Input.ParseInput();
+            var adapterOrder = adapters.OrderByDescending(a => a.RatedJoltage).ToArray();
+
+            for (var i=0; i < adapterOrder.Length; i++)
+            {
+                var currentItem = adapterOrder[i];
+                var possibleAdapters = adapters.Where(a => currentItem.CanBeAdaptedBy().Contains(a.RatedJoltage)).ToList();
+                //var possibleConnectedTos = adapters.Where(a => currentItem.CanBeConnectedTo().Contains(a.RatedJoltage)).ToList();
+
+                //This should only be true on the last node.
+                if (possibleAdapters.Count == 0)
+                {
+                    currentItem.NumberOfPossiblePathsFromHereToEnd = 1;
+                    continue;
+                }
+
+                currentItem.NumberOfPossiblePathsFromHereToEnd = possibleAdapters.Sum(a => a.NumberOfPossiblePathsFromHereToEnd);
+            }
+
+            return adapterOrder.Where(a => a.RatedJoltage <= 3).Sum(a => a.NumberOfPossiblePathsFromHereToEnd);
+        }
     }
 }
