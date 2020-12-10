@@ -10,6 +10,7 @@ using AdventOfCode2020.Day_06;
 using AdventOfCode2020.Day_07;
 using AdventOfCode2020.Day_08;
 using AdventOfCode2020.Day_09;
+using AdventOfCode2020.Day_10;
 
 namespace AdventOfCode2020
 {
@@ -74,6 +75,13 @@ namespace AdventOfCode2020
             var weakness = CodeBreaker.FindCodeWeakness(day9Input);
             Console.WriteLine($"Part 1: {weakness}");
             Console.WriteLine($"Part 2: {CodeBreaker.FindEncryptionWeakness(day9Input, weakness)}");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Day 10");
+            var differences = Day10.BuildJoltageChain();
+            Console.WriteLine($"Part 1: {differences[1] * differences[3]}");
+            //Console.WriteLine($"Part 2: {CodeBreaker.FindEncryptionWeakness(day9Input, weakness)}");
 
             Console.ReadKey();
         }
