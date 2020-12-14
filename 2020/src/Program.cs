@@ -11,6 +11,7 @@ using AdventOfCode2020.Day_07;
 using AdventOfCode2020.Day_08;
 using AdventOfCode2020.Day_09;
 using AdventOfCode2020.Day_10;
+using AdventOfCode2020.Day_11;
 
 namespace AdventOfCode2020
 {
@@ -52,8 +53,8 @@ namespace AdventOfCode2020
             Console.WriteLine();
 
             Console.WriteLine("Day 6");
-            Console.WriteLine($"Part 1: {Day6Input.ParsePassengerGroups().Sum(x => x.DetermineAffirmativeQuestionsThatAnyoneAnswered().Count())}");
-            Console.WriteLine($"Part 2: {Day6Input.ParsePassengerGroups().Sum(x => x.DetermineAffirmativeQuestionsThatEveryoneAnswered().Count())}");
+            Console.WriteLine($"Part 1: {Day6Input.ParsePassengerGroups().Sum(x => x.DetermineAffirmativeQuestionsThatAnyoneAnswered().Count)}");
+            Console.WriteLine($"Part 2: {Day6Input.ParsePassengerGroups().Sum(x => x.DetermineAffirmativeQuestionsThatEveryoneAnswered().Count)}");
 
             Console.WriteLine();
 
@@ -82,6 +83,14 @@ namespace AdventOfCode2020
             var differences = Day10.BuildJoltageChain();
             Console.WriteLine($"Part 1: {differences[1] * differences[3]}");
             Console.WriteLine($"Part 2: {Day10.DetermineNumberOfPermutations()}");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Day 11");
+            var stableSeatingArea = SeatingAreaSimulator.FindStableSeatingArea();
+            var (_, _, occupied) = stableSeatingArea.DetermineFloorStatus();
+            Console.WriteLine($"Part 1: {occupied}");
+            //Console.WriteLine($"Part 2: {Day10.DetermineNumberOfPermutations()}");
 
             Console.ReadKey();
         }
