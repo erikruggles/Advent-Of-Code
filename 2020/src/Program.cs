@@ -90,7 +90,9 @@ namespace AdventOfCode2020
             var stableSeatingArea = SeatingAreaSimulator.FindStableSeatingArea();
             var (_, _, occupied) = stableSeatingArea.DetermineFloorStatus();
             Console.WriteLine($"Part 1: {occupied}");
-            //Console.WriteLine($"Part 2: {Day10.DetermineNumberOfPermutations()}");
+            stableSeatingArea = SeatingAreaSimulator.FindStableSeatingAreaUsingNewMethod();
+            (_, _, occupied) = stableSeatingArea.DetermineFloorStatus();
+            Console.WriteLine($"Part 2: {occupied}");
 
             Console.ReadKey();
         }

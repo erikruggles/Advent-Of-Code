@@ -39,7 +39,7 @@ namespace AdventOfCode2020.Day_11
             return (floor, unoccupied, occupied);
         }
         
-        public int DetermineSeatsNewState(int x, int y)
+        public int DetermineNewSeatStateUsingAdjacentRules(int y, int x)
         {
             var seat = Floor[y, x];
 
@@ -78,7 +78,82 @@ namespace AdventOfCode2020.Day_11
 
             return occupiedNearby < 4 ? SeatingOptions.OccupiedSeat : SeatingOptions.EmptySeat;
         }
-        
+
+        public int DetermineNewSeatStateUsingLineOfSightRules(int y, int x)
+        {
+            var seat = Floor[y, x];
+
+            if (seat == SeatingOptions.Floor)
+            {
+                return SeatingOptions.Floor;
+            }
+
+            var occupiedNearby = 0;
+            if (IsTheNextSeatOccupied(y, x, SeatingDirection.Up)) occupiedNearby++;
+            if (IsTheNextSeatOccupied(y, x, SeatingDirection.Down)) occupiedNearby++;
+            if (IsTheNextSeatOccupied(y, x, SeatingDirection.Left)) occupiedNearby++;
+            if (IsTheNextSeatOccupied(y, x, SeatingDirection.Right)) occupiedNearby++;
+            if (IsTheNextSeatOccupied(y, x, SeatingDirection.DiagonalDownLeft)) occupiedNearby++;
+            if (IsTheNextSeatOccupied(y, x, SeatingDirection.DiagonalDownRight)) occupiedNearby++;
+            if (IsTheNextSeatOccupied(y, x, SeatingDirection.DiagonalUpLeft)) occupiedNearby++;
+            if (IsTheNextSeatOccupied(y, x, SeatingDirection.DiagonalUpRight)) occupiedNearby++;
+
+            if (seat == SeatingOptions.EmptySeat)
+            {
+                return occupiedNearby == 0 ? SeatingOptions.OccupiedSeat : SeatingOptions.EmptySeat;
+            }
+
+            return occupiedNearby < 5 ? SeatingOptions.OccupiedSeat : SeatingOptions.EmptySeat;
+        }
+
+        public bool IsTheNextSeatOccupied(int y, int x, SeatingDirection seatingDirection)
+        {
+            var currentY = y;
+            var currentX = x;
+            while (true)
+            {
+                if (seatingDirection.HasFlag(SeatingDirection.Up))
+                {
+                    currentY--;
+                }
+
+                if (seatingDirection.HasFlag(SeatingDirection.Down))
+                {
+                    currentY++;
+                }
+
+                if (seatingDirection.HasFlag(SeatingDirection.Left))
+                {
+                    currentX--;
+                }
+
+                if (seatingDirection.HasFlag(SeatingDirection.Right))
+                {
+                    currentX++;
+                }
+
+                if (currentY < 0 || currentY >= Floor.GetLength(0))
+                {
+                    return false;
+                }
+
+                if (currentX < 0 || currentX >= Floor.GetLength(1))
+                {
+                    return false;
+                }
+
+                if (Floor[currentY, currentX] == SeatingOptions.EmptySeat)
+                {
+                    return false;
+                }
+                
+                if (Floor[currentY, currentX] == SeatingOptions.OccupiedSeat)
+                {
+                    return true;
+                }
+            }
+        }
+
         public static bool operator ==(SeatingArea left, SeatingArea right)
         {
             if (left.Floor.Rank != 2 || right.Floor.Rank != 2)
@@ -165,5 +240,18 @@ namespace AdventOfCode2020.Day_11
         public const int Floor = 0;
         public const int EmptySeat = 1;
         public const int OccupiedSeat = 2;
+    }
+
+    [Flags]
+    public enum SeatingDirection
+    {
+        Up = 1,
+        Down = 2,
+        Left = 4,
+        Right = 8,
+        DiagonalUpRight = Up | Right,
+        DiagonalUpLeft = Up | Left,
+        DiagonalDownRight = Down | Right,
+        DiagonalDownLeft = Down | Left
     }
 }

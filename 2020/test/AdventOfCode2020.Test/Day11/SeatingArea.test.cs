@@ -46,7 +46,7 @@ LLL", 0, 0, SeatingOptions.Floor)]
         {
             var seatingArea = SeatingAreaFactory.CreateSeatingAreaFromString(input);
 
-            Assert.Equal(expectedSeatingOption, seatingArea.DetermineSeatsNewState(x, y));
+            Assert.Equal(expectedSeatingOption, seatingArea.DetermineNewSeatStateUsingAdjacentRules(y, x));
         }
         
         [InlineData(@"LLL
@@ -67,7 +67,7 @@ LLL", 2, 2, SeatingOptions.OccupiedSeat)]
         {
                 var seatingArea = SeatingAreaFactory.CreateSeatingAreaFromString(input);
 
-                Assert.Equal(expectedSeatingOption, seatingArea.DetermineSeatsNewState(x, y));
+                Assert.Equal(expectedSeatingOption, seatingArea.DetermineNewSeatStateUsingAdjacentRules(y, x));
         }
         
         [InlineData(@"###
@@ -88,7 +88,7 @@ LLL", 1, 1, SeatingOptions.OccupiedSeat)]
         {
                 var seatingArea = SeatingAreaFactory.CreateSeatingAreaFromString(input);
 
-                Assert.Equal(expectedSeatingOption, seatingArea.DetermineSeatsNewState(x, y));
+                Assert.Equal(expectedSeatingOption, seatingArea.DetermineNewSeatStateUsingAdjacentRules(y, x));
         }
         
         [InlineData(@"###
@@ -106,7 +106,35 @@ L#L
         {
                 var seatingArea = SeatingAreaFactory.CreateSeatingAreaFromString(input);
 
-                Assert.Equal(expectedSeatingOption, seatingArea.DetermineSeatsNewState(x, y));
+                Assert.Equal(expectedSeatingOption, seatingArea.DetermineNewSeatStateUsingAdjacentRules(y, x));
+        }
+        
+        [InlineData(@".......#.
+...#.....
+.#.......
+.........
+..#L....#
+....#....
+.........
+#........
+...#.....", 3, 4, SeatingOptions.EmptySeat)]
+        [InlineData(@".............
+.L.L.#.#.#.#.
+.............", 1, 1, SeatingOptions.OccupiedSeat)]
+        [InlineData(@".##.##.
+#.#.#.#
+##...##
+...L...
+##...##
+#.#.#.#
+.##.##.", 3, 3, SeatingOptions.OccupiedSeat)]
+        
+        [Theory(DisplayName = "Day 11 - Seating Area - Determine New Seat State Using Line Of Sight Rules")]
+        public void Day11_SeatingArea_DetermineNewSeatStateUsingLineOfSightRules(string input, int x, int y, int expectedSeatingOption)
+        {
+                var seatingArea = SeatingAreaFactory.CreateSeatingAreaFromString(input);
+
+                Assert.Equal(expectedSeatingOption, seatingArea.DetermineNewSeatStateUsingLineOfSightRules(y, x));
         }
     }
 }

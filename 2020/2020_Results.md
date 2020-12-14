@@ -14,7 +14,7 @@ This is the folder to keep track of all of the code I have written to help solve
 | 8 | 1451 | 1160 |
 | 9 | 23278925 | 4011064 |
 | 10 | 1848 | 8099130339328 |
-| 11 | 2448 | |
+| 11 | 2448 | 2234 |
 | 12 | | |
 | 13 | | |
 | 14 | | |
